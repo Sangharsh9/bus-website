@@ -1,9 +1,5 @@
-# Ignore sensitive JSON files
+node_modules/
+.vscode/
 users.json
 complaints.json
-
-# Node modules
-node_modules/
-
-# Logs and environment
 .env
