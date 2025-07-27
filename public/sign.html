@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="c1.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Create an Account</h2>
+    <form action="/signup" method="post">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <select name="role" required>
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="/login1.html">Login</a></p>
+    </form>
+</div>
+
+</body>
+</html>

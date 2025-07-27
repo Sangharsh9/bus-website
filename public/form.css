@@ -1,0 +1,261 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+input[type="number"] {
+  max-width: 100px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* Header Styling */
+.header {
+  min-height: 10vh; /* Keeps the header height reduced */
+  width: 80%; /* Reduced width to 80% of the viewport */
+  max-width: 1200px; /* Optional: Prevents the header from becoming too wide on large screens */
+  margin: 0 auto; /* Centers the header horizontally */
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links ul li a {
+  color: rgb(0, 7, 75);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #13a6ca;
+  display: block;
+  margin: auto;
+  transition: width 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links ul {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .nav-links ul li {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .toggle-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: #007bff;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* For Desktop and Larger Screen */
+@media screen and (min-width: 769px) {
+  .close-btn, .toggle-icon {
+    display: none; /* Hide both icons on laptop/desktop */
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.header {
+  width: 100%;
+  background-color: white;
+  padding: 20px ; /* Adds padding for space around the content */
+  display: flex;
+  justify-content: space-between; /* Aligns the items to the left and right */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to the header */
+}
+
+.leftside h2 {
+  font-size: 24px;
+  color: #007bff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-links ul li {
+  margin-left: 20px; /* Adds spacing between the links */
+}
+
+.nav-links ul li a {
+  color: rgb(0, 7, 75);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transition effect */
+}
+
+.nav-links ul li a:hover {
+  color: #13a6ca; /* Change color on hover */
+  transform: translateY(-5px); /* Slightly move the link upwards on hover */
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stacks the content vertically on smaller screens */
+    text-align: center;
+  }
+
+  .leftside h2 {
+    font-size: 20px; /* Reduces font size for smaller screens */
+  }
+
+  .nav-links {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links ul {
+    flex-direction: column; /* Stacks the links vertically on small screens */
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin-left: 0;
+    margin-bottom: 10px; /* Adds spacing between links vertically */
+  }
+
+  .nav-links ul li a {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* For Desktop and Larger Screen */
+@media screen and (min-width: 769px) {
+  .leftside h2 {
+    font-size: 28px; /* Increases font size for larger screens */
+  }
+}
+

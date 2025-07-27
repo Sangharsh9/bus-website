@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Form</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <section class="sub-header">
+    <!-- Navbar -->
+    <nav>
+      <div class="leftside">SANJIVANI BUS SERVICE</div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="form.html">CONTACT US</a></li>
+          <li><a href="routess.html">ROUTES</a></li>
+          <li><a href="myComplaints.html">Dashboard</a></li>
+          <li><a href="login.html">ADMINS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <div class="container">
+    <h1>Bus Complaint Form</h1>
+    <form id="complaintForm" action="/submit" method="POST">
+      <label for="id">Complaint ID:</label>
+      <input type="number" id="id" name="id" required>
+    
+      <label for="busNumber">Bus Number:</label>
+      <input type="text" id="busNumber" name="busNumber" required>
+    
+      <label for="busTitle">Bus Title:</label>
+      <input type="text" id="busTitle" name="busTitle" required>
+    
+      <label for="busDescription">Bus Description:</label>
+      <textarea id="busDescription" name="busDescription" rows="4" required></textarea>
+    
+      <button type="submit">Submit Complaint</button>
+    </form>
+    <a href="/home">Back to Home</a>
+  </div>
+</body>
+</html>

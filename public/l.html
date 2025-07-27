@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Sign-In</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto;
+      height: 70px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #003366;
+      margin-bottom: 2rem;
+    }
+
+    h2 span {
+      color: #ff9800;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 40px 14px 40px;
+      border: none;
+      border-bottom: 2px solid #1976d2;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .input-group label {
+      font-size: 0.85rem;
+      color: #1976d2;
+      position: absolute;
+      top: -18px;
+      left: 40px;
+      background-color: white;
+      padding: 0 5px;
+    }
+
+    .input-group .material-icons {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #555;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #555;
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      color: #888;
+      margin-left: 5px;
+      margin-top: -10px;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1976d2;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .login-button:hover {
+      background-color: #115293;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .signup-link a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <img src="https://vierp-test.s3.ap-south-1.amazonaws.com/logo/Sanjivani_logo.jpeg" alt="Sanjivani Logo" class="logo">
+    <h2>Student Sign-<span>In</span></h2>
+
+    <form action="/login" method="POST">
+      <div class="input-group">
+        <span class="material-icons">person</span>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+
+      <div class="input-group">
+        <span class="material-icons">lock</span>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <span class="material-icons toggle-password" onclick="togglePassword()">visibility_off</span>
+      </div>
+
+      <div class="hint">At least 8 characters</div>
+
+      <button type="submit" class="login-button">SIGN IN</button>
+    </form>
+
+    <div class="signup-link">
+      Don't have an account? <a href="/signup">Sign up here</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      const icon = document.querySelector('.toggle-password');
+
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        icon.textContent = 'visibility';
+      } else {
+        passwordField.type = 'password';
+        icon.textContent = 'visibility_off';
+      }
+    }
+  </script>
+</body>
+</html>

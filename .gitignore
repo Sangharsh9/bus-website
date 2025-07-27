@@ -1,0 +1,9 @@
+# Ignore sensitive JSON files
+users.json
+complaints.json
+
+# Node modules
+node_modules/
+
+# Logs and environment
+.env

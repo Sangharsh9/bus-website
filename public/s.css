@@ -1,0 +1,154 @@
+/* General Body and Layout Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Sub-header Section Styling */
+.sub-header {
+    background-color: #6a84a0;
+    color: white;
+    padding: 2px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.leftside {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+}
+
+.nav-links ul li a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #f39c12;
+}
+
+/* Container for Complaints */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Complaints List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+li p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Empty State Message */
+#emptyStateMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Delete Button Styling */
+button {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Back Link Styling */
+a {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    color: #84a3c4;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    li {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Complaints</title>
+  <link href="mycomplaint.css" rel="stylesheet">
+  <!-- Link to Font Awesome for profile icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  
+    <!-- HEADER -->
+    <section class="sub-header">
+      <!-- Navbar -->
+      <nav>
+        <div class="leftside">SANJIVANI BUS SERVICE</div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+            <li>
+              <!-- Form with GET method to trigger the logout route -->
+              <form action="/logout" method="GET">
+                <button type="submit">Logout</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    
+    <!-- Username Section (below header) -->
+    <section class="username-section">
+      <span class="profile-icon">
+        <i class="fas fa-user"></i> <!-- Font Awesome Profile Icon -->
+      </span>
+      <span id="usernameLink">Username</span> <!-- Username will be displayed here -->
+    </section>
+
+  <h1>Your Complaints</h1>
+  <div id="complaintsList">Loading complaints...</div>
+
+  <script>
+    // Fetch the complaints data from the server
+    fetch('/myComplaints')
+      .then(response => response.json())
+      .then(data => {
+        const complaintsList = document.getElementById('complaintsList');
+        if (data.length === 0) {
+          complaintsList.innerHTML = 'No complaints found.';
+          console.log(data);
+        } else {
+          complaintsList.innerHTML = ''; // Clear loading message
+          data.forEach(complaint => {
+            complaintsList.innerHTML += `
+              <div>
+         <p><strong>Complain Tilte:<h3>${complaint.busTitle}</h3></p>
+                <p><strong>Bus Number:</strong> ${complaint.busNumber}</p>
+                <p><strong>Description:</strong> ${complaint.busDescription}</p>
+              </div>
+            `;
+          });
+        }
+
+        // Assuming 'username' is part of the response data, update the username in the section
+        const usernameLink = document.getElementById('usernameLink');
+        if (data.length > 0 && data[0].username) { // If there's a username in the data
+          usernameLink.innerHTML = data[0].username; // Update the username
+        } else {
+          usernameLink.innerHTML = 'Guest'; // If no username is available, display "Guest"
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching complaints:', error);
+        const complaintsList = document.getElementById('complaintsList');
+        complaintsList.innerHTML = 'An error occurred while fetching complaints. Please try again later.';
+      });
+  </script>
+</body>
+</html>

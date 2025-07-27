@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      width: 330px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 26px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      margin-top: 15px;
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+
+    .signup-link {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .signup-link a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form id="login-form" onsubmit="return validateLogin(event)">
+      <div class="form-group">
+        <label for="user-id">ID:</label>
+        <input type="text" id="user-id" name="user-id" required>
+      </div>
+      <div class="form-group">
+        <label for="user-password">Password:</label>
+        <input type="password" id="user-password" name="user-password" required>
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <div id="error-message" class="error-message"></div>
+
+    <div class="signup-link">
+      Don't have an account? <a href="register.html">Register here</a>
+    </div>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+
+      const validId = "admin";
+      const validPassword = "1234";
+
+      const userId = document.getElementById('user-id').value;
+      const userPassword = document.getElementById('user-password').value;
+
+      if (userId === validId && userPassword === validPassword) {
+        window.location.href = "complaints.html";
+      } else {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = "Invalid ID or Password!";
+        errorMessage.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

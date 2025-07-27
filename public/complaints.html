@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaints</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+
+    <section class="sub-header">
+        <!-- Navbar -->
+        <nav>
+          <div class="leftside">SANJIVANI BUS SERVICE</div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="home.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="form.html">CONTACT US</a></li>
+              <li><a href="routess.html">ROUTES</a></li>
+              <li><a href="myComplaints.html">Dashboard</a></li>
+              <li><a href="login.html">ADMINS</a></li>
+            </ul>
+          </div>
+        </nav>
+    </section>
+
+    <div class="container">
+        <h1>All Complaints</h1>
+        <ul id="complaintsList">
+            <!-- Complaints will be displayed here -->
+        </ul>
+        <p id="emptyStateMessage" style="display:none;">No complaints available at the moment.</p>
+
+        <a href="/">Back to Complaint Form</a>
+    </div>
+
+    <script>
+        // Fetch and display all complaints when the page loads
+        window.onload = function() {
+            fetch('/getComplaints')
+                .then(response => response.json())
+                .then(data => {
+                    const complaintsList = document.getElementById('complaintsList');
+                    const emptyStateMessage = document.getElementById('emptyStateMessage');
+                    complaintsList.innerHTML = ''; // Clear the list
+                    emptyStateMessage.style.display = 'none'; // Hide empty state message
+
+                    if (data.length === 0) {
+                        emptyStateMessage.style.display = 'block'; // Show empty state if no complaints
+                    } else {
+                        data.forEach(complaint => {
+                            const li = document.createElement('li');
+                            li.innerHTML = ` 
+                                <strong>USERNAME: ${complaint.username}<br>
+                                Complaint ID: ${complaint.id}</strong><br>
+                                Bus Number: ${complaint.busNumber}<br>
+                                Bus Title: ${complaint.busTitle}<br>
+                                Description: ${complaint.busDescription}<br>
+                                <button onclick="deleteComplaint('${complaint.id}')">Delete</button>
+                                <hr>
+                            `;
+                            complaintsList.appendChild(li);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching complaints:', error);
+                    alert('An error occurred while fetching the complaints. Please try again later.');
+                });
+        };
+
+        // Function to delete a complaint
+        function deleteComplaint(id) {
+            if (confirm("Are you sure you want to delete this complaint?")) {
+                fetch(`/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.text())
+                .then(message => {
+                    alert(message);
+                    location.reload(); // Reload to update the list of complaints
+                })
+                .catch(error => {
+                    console.error('Error deleting complaint:', error);
+                    alert('An error occurred while deleting the complaint. Please try again later.');
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
