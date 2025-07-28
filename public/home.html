@@ -4,152 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-<link href="style.css" rel="stylesheet">
-    <!-- Linking to css -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Box icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <!-- Linking with the custom js file -->
-    <!-- <script src="main.js"></script> -->
-
     <!-- HEADER -->
-    <section class="sub-header">
-      <!-- Navbar -->
-      <nav>
-        <div class="leftside">SANJIVANI BUS SERVICE</div>
-        <div class="nav-links">
-          <ul>
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="form.html">CONTACT US</a></li>
-            <li><a href="routess.html">ROUTES</a></li>
-            <li><a href="myComplaints.html">Dashboard</a></li>
-            <li><a href="login.html">ADMINS</a></li>
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">SANJIVANI BUS SERVICE</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+            <li class="nav-item"><a class="nav-link" href="form.html">CONTACT US</a></li>
+            <li class="nav-item"><a class="nav-link" href="routess.html">ROUTES</a></li>
+            <li class="nav-item"><a class="nav-link" href="myComplaints.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">ADMINS</a></li>
           </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="firstSection d-flex align-items-center justify-content-center text-center">
+      <div class="quote_1">
+        <h1 class="fw-bold">YOUR SAFE JOURNEY <br />IS OUR MAIN GOAL</h1>
+      </div>
     </section>
-    <!-- Main -->
-    <main>
-      <section class="firstSection">
-        <div class="quote_1">
-          <h1>YOUR SAFE JOURNEY <br />IS OUR MAIN GOAL</h1>
 
-          <!-- <div class="leftSection">left</div>
-        <div class="rightSection">right</div> -->
-        </div>
-      </section>
-      <!-- Section 2 -->
-      <section class="secondSection">
-        <div class="PassGuide">
-          <h1>How it works ?</h1>
-          <p>
-            A valid bus pass is required to travel by the college bus. Please follow the steps mentioned above to issue your bus pass. Without a bus pass, access to the college bus service will not be permitted.
-          </p>
-          <div class="row1">
-              <div class="container_1">
-                <h3>Visit the Stationery Store</h3>
-                <p>Go to the college's stationery store in person. This is where the process to issue your bus pass begins.</p>
-              </div>
-              <div class="container_2">
-                <h3>Provide Your Details</h3>
-                <p>
-                  <ul>
-                  <li>Your name</li>
-                  <li>Pick-up or on board location</li>
-                  </ul>
-                </p>
-              </div>
-              <div class="container_3">
-                <h3>Price Confirmation</h3>
-                <p>The staff will determine the cost of the bus pass based on your specified location</p>
-              </div>
-            </div>
-          <div class="row2">
-              <div class="container_4">
-                <h3>Make the Payment</h3>
-                <p>Pay the appropriate fee for your monthly two-way bus pass</p>
-              </div>
-              <div class="container_5">
-                <h3>Collect Your Pass</h3>
-                <p>Once payment is confirmed, you will receive your monthly two-way bus pass, which allows you to travel on the college bus for the designated month.</p>
-              </div>
-            </div>
-        </div>
-      </section> <!--  End of section 2 -->
-
-      <!-- Section 3 -->
-       <section class="safety-measures">
-        <h1>Safety Measures</h1>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <br>
-        <div class="row3">
-          <div class="safety-col">
-            <img src="img\Fireextinguisher1.jpg">
-            <h3>Fire Extinguishers</h3>
-            <p></p>
+    <!-- HOW IT WORKS SECTION -->
+    <section class="secondSection py-5">
+      <div class="PassGuide container">
+        <h1 class="mb-4">How it works ?</h1>
+        <p class="mb-5">
+          A valid bus pass is required to travel by the college bus. Please follow the steps mentioned above to issue your bus pass. Without a bus pass, access to the college bus service will not be permitted.
+        </p>
+        <div class="row row1">
+          <div class="col-md-4 container_1 mb-3">
+            <h3>Visit the Stationery Store</h3>
+            <p>Go to the college's stationery store in person. This is where the process to issue your bus pass begins.</p>
           </div>
-
-          <div class="safety-col">
-            <img src="img/Firstaid1.jpg">
-            <h3>First Aid</h3>
-            <p></p>
+          <div class="col-md-4 container_2 mb-3">
+            <h3>Provide Your Details</h3>
+            <ul>
+              <li>Your name</li>
+              <li>Pick-up or on board location</li>
+            </ul>
           </div>
+          <div class="col-md-4 container_3 mb-3">
+            <h3>Price Confirmation</h3>
+            <p>The staff will determine the cost of the bus pass based on your specified location</p>
+          </div>
+        </div>
+        <div class="row row2">
+          <div class="col-md-6 container_4 mb-3">
+            <h3>Make the Payment</h3>
+            <p>Pay the appropriate fee for your monthly two-way bus pass</p>
+          </div>
+          <div class="col-md-6 container_5 mb-3">
+            <h3>Collect Your Pass</h3>
+            <p>Once payment is confirmed, you will receive your monthly two-way bus pass, which allows you to travel on the college bus for the designated month.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="safety-col">
-          <img src="img\Censor1.jpg">
+    <!-- SAFETY SECTION -->
+    <section class="safety-measures container py-5">
+      <h1 class="mb-3">Safety Measures</h1>
+      <p class="mb-5">Lorem ipsum dolor sit amet consectetur.</p>
+      <div class="row row3">
+        <div class="col-md-4 safety-col mb-4">
+          <img src="img/Fireextinguisher1.jpg" class="img-fluid" alt="Fire Extinguishers">
+          <h3>Fire Extinguishers</h3>
+        </div>
+        <div class="col-md-4 safety-col mb-4">
+          <img src="img/Firstaid1.jpg" class="img-fluid" alt="First Aid">
+          <h3>First Aid</h3>
+        </div>
+        <div class="col-md-4 safety-col mb-4">
+          <img src="img/Censor1.jpg" class="img-fluid" alt="Censors">
           <h3>Censors</h3>
-          <p></p>
         </div>
       </div>
-       </section> <!-- End of Section 3 -->
-    </main>
+    </section>
 
-    <!-- FOOTER OF WEBPAGE -->
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>College Address</h3>
-          <p>Sanjivani College of Engineering,</p>
-          <p>Station Rd, opposite to Sanjivani Factory,</p>
-          <p>Sanjivaani Factory, Singnapur, Kopargaon,</p>
-          <p>Maharashtra 423603</p>
-        </div>
-        
-        <div class="footer-center">
-          <!-- <h3>Location</h3> -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.487118949125!2d74.4777523!3d19.7795417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd75bb7b1d64ab%3A0x620f144d16c36c10!2sSanjivani%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1698840701258!5m2!1sen!2sin"
-            width="300"
-            height="200"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        
-        <div class="footer-right">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="form.html">Contact</a></li>
-            <li><a href="complaints.html">Routes</a></li>
-          </ul>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white">
+      <div class="footer-container container py-4">
+        <div class="row">
+          <div class="col-md-4 footer-left">
+            <h3 class="text-warning">College Address</h3>
+            <p>Sanjivani College of Engineering,</p>
+            <p>Station Rd, opposite to Sanjivani Factory,</p>
+            <p>Sanjivaani Factory, Singnapur, Kopargaon,</p>
+            <p>Maharashtra 423603</p>
+          </div>
+          <div class="col-md-4 footer-center">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.487118949125!2d74.4777523!3d19.7795417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd75bb7b1d64ab%3A0x620f144d16c36c10!2sSanjivani%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1698840701258!5m2!1sen!2sin"
+              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="col-md-4 footer-right">
+            <h3 class="text-warning">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="home.html" class="text-warning text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-warning text-decoration-none">About</a></li>
+              <li><a href="form.html" class="text-warning text-decoration-none">Contact</a></li>
+              <li><a href="complaints.html" class="text-warning text-decoration-none">Routes</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    
-      <div class="footer-bottom">
-        <p><a href="https://www.sanjivani.org.in/">Visit Main Website</a></p>
+      <div class="footer-bottom text-center py-2 bg-secondary">
+        <p><a href="https://www.sanjivani.org.in/" class="text-warning">Visit Main Website</a></p>
       </div>
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
