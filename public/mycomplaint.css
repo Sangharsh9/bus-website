@@ -154,4 +154,12 @@ h1 {
   #complaintsList div {
     padding: 18px;
   }
+}button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
